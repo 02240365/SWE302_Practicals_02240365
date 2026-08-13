@@ -1,0 +1,27 @@
+{
+  "name": "cst-student-management-system",
+  "version": "1.0.0",
+  "description": "CST College Student Management System - SWE302 Lab 2 (Unit Testing & Code Coverage)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest --coverage"
+  },
+  "author": "Student No: 02240365",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js"
+    ],
+    "coverageDirectory": "coverage"
+  }
+}
