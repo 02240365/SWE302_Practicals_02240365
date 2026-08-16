@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1786919338556" clover="3.2.0">
+  <project timestamp="1786919338556" name="All files">
+    <metrics statements="73" coveredstatements="73" conditionals="45" coveredconditionals="45" methods="16" coveredmethods="16" elements="134" coveredelements="134" complexity="0" loc="73" ncloc="73" packages="1" files="3" classes="3"/>
+    <file name="Account.js" path="/Users/sonamzangmo/Downloads/Lab3/src/Account.js">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="18" count="34" type="stmt"/>
+      <line num="19" count="34" type="stmt"/>
+      <line num="20" count="34" type="stmt"/>
+      <line num="24" count="4" type="stmt"/>
+    </file>
+    <file name="Bank.js" path="/Users/sonamzangmo/Downloads/Lab3/src/Bank.js">
+      <metrics statements="52" coveredstatements="52" conditionals="45" coveredconditionals="45" methods="7" coveredmethods="7"/>
+      <line num="26" count="4" type="stmt"/>
+      <line num="28" count="4" type="stmt"/>
+      <line num="38" count="31" type="stmt"/>
+      <line num="39" count="31" type="cond" truecount="2" falsecount="0"/>
+      <line num="40" count="31" type="cond" truecount="2" falsecount="0"/>
+      <line num="41" count="31" type="cond" truecount="2" falsecount="0"/>
+      <line num="58" count="40" type="cond" truecount="2" falsecount="0"/>
+      <line num="59" count="1" type="stmt"/>
+      <line num="61" count="39" type="cond" truecount="2" falsecount="0"/>
+      <line num="62" count="1" type="stmt"/>
+      <line num="64" count="38" type="cond" truecount="2" falsecount="0"/>
+      <line num="65" count="1" type="stmt"/>
+      <line num="67" count="37" type="cond" truecount="4" falsecount="0"/>
+      <line num="68" count="3" type="stmt"/>
+      <line num="73" count="34" type="stmt"/>
+      <line num="74" count="34" type="stmt"/>
+      <line num="75" count="34" type="stmt"/>
+      <line num="88" count="7" type="stmt"/>
+      <line num="90" count="6" type="cond" truecount="4" falsecount="0"/>
+      <line num="91" count="3" type="stmt"/>
+      <line num="93" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="94" count="1" type="stmt"/>
+      <line num="99" count="2" type="stmt"/>
+      <line num="100" count="2" type="stmt"/>
+      <line num="113" count="7" type="stmt"/>
+      <line num="115" count="6" type="cond" truecount="4" falsecount="0"/>
+      <line num="116" count="2" type="stmt"/>
+      <line num="119" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="120" count="1" type="stmt"/>
+      <line num="125" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="126" count="1" type="stmt"/>
+      <line num="131" count="2" type="stmt"/>
+      <line num="132" count="2" type="stmt"/>
+      <line num="147" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="148" count="1" type="stmt"/>
+      <line num="150" count="7" type="stmt"/>
+      <line num="151" count="6" type="stmt"/>
+      <line num="153" count="5" type="cond" truecount="4" falsecount="0"/>
+      <line num="154" count="1" type="stmt"/>
+      <line num="157" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="158" count="1" type="stmt"/>
+      <line num="163" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="164" count="1" type="stmt"/>
+      <line num="169" count="2" type="stmt"/>
+      <line num="170" count="2" type="stmt"/>
+      <line num="171" count="2" type="stmt"/>
+      <line num="181" count="27" type="stmt"/>
+      <line num="182" count="27" type="cond" truecount="2" falsecount="0"/>
+      <line num="183" count="4" type="stmt"/>
+      <line num="185" count="23" type="stmt"/>
+      <line num="190" count="79" type="cond" truecount="2" falsecount="0"/>
+      <line num="194" count="4" type="stmt"/>
+    </file>
+    <file name="errors.js" path="/Users/sonamzangmo/Downloads/Lab3/src/errors.js">
+      <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="25" count="1" type="stmt"/>
+      <line num="32" count="4" type="stmt"/>
+      <line num="33" count="4" type="stmt"/>
+      <line num="40" count="9" type="stmt"/>
+      <line num="41" count="9" type="stmt"/>
+      <line num="48" count="1" type="stmt"/>
+      <line num="49" count="1" type="stmt"/>
+      <line num="56" count="2" type="stmt"/>
+      <line num="57" count="2" type="stmt"/>
+      <line num="64" count="2" type="stmt"/>
+      <line num="65" count="2" type="stmt"/>
+      <line num="72" count="1" type="stmt"/>
+      <line num="73" count="1" type="stmt"/>
+      <line num="77" count="4" type="stmt"/>
+    </file>
+  </project>
+</coverage>
