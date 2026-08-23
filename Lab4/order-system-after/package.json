@@ -1,0 +1,14 @@
+{
+  "name": "order-system-after",
+  "version": "1.0.0",
+  "description": "Order processing system (refactored for testability) used for SonarQube static analysis in SWE302 Lab 4",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "license": "MIT"
+}

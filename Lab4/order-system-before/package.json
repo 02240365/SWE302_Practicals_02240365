@@ -1,0 +1,10 @@
+{
+  "name": "order-system-before",
+  "version": "1.0.0",
+  "description": "Order processing system (pre-refactor) used for SonarQube static analysis in SWE302 Lab 4",
+  "main": "src/orderProcessor.js",
+  "scripts": {
+    "start": "node src/orderProcessor.js"
+  },
+  "license": "MIT"
+}

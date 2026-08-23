@@ -1,0 +1,6 @@
+projectKey=order-system-after
+serverUrl=http://localhost:9000
+serverVersion=26.8.0.126808
+dashboardUrl=http://localhost:9000/dashboard?id=order-system-after
+ceTaskId=80584c1b-479e-4640-a344-2029ad5f1b0e
+ceTaskUrl=http://localhost:9000/api/ce/task?id=80584c1b-479e-4640-a344-2029ad5f1b0e

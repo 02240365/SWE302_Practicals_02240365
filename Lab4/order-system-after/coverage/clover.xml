@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1787484395409" clover="3.2.0">
+  <project timestamp="1787484395409" name="All files">
+    <metrics statements="116" coveredstatements="112" conditionals="54" coveredconditionals="50" methods="33" coveredmethods="31" elements="203" coveredelements="193" complexity="0" loc="116" ncloc="116" packages="1" files="9" classes="9"/>
+    <file name="DiscountCalculator.js" path="/Users/sonamzangmo/Downloads/Lab4/order-system-after/src/DiscountCalculator.js">
+      <metrics statements="17" coveredstatements="16" conditionals="16" coveredconditionals="15" methods="9" coveredmethods="9"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="18" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="22" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="28" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="29" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="30" count="1" type="stmt"/>
+      <line num="34" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="40" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="41" count="2" type="cond" truecount="1" falsecount="1"/>
+      <line num="42" count="0" type="stmt"/>
+      <line num="48" count="2" type="stmt"/>
+      <line num="49" count="3" type="stmt"/>
+      <line num="50" count="2" type="stmt"/>
+      <line num="51" count="5" type="stmt"/>
+      <line num="61" count="12" type="stmt"/>
+      <line num="62" count="12" type="cond" truecount="2" falsecount="0"/>
+      <line num="65" count="2" type="stmt"/>
+    </file>
+    <file name="OrderRepository.js" path="/Users/sonamzangmo/Downloads/Lab4/order-system-after/src/OrderRepository.js">
+      <metrics statements="10" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="5" coveredmethods="4"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="10" count="4" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="20" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="27" count="2" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+    </file>
+    <file name="OrderService.js" path="/Users/sonamzangmo/Downloads/Lab4/order-system-after/src/OrderService.js">
+      <metrics statements="22" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="3"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="17" count="4" type="stmt"/>
+      <line num="18" count="4" type="stmt"/>
+      <line num="19" count="4" type="stmt"/>
+      <line num="20" count="4" type="stmt"/>
+      <line num="24" count="3" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="27" count="2" type="stmt"/>
+      <line num="28" count="2" type="stmt"/>
+      <line num="29" count="2" type="stmt"/>
+      <line num="30" count="2" type="stmt"/>
+      <line num="32" count="2" type="stmt"/>
+      <line num="43" count="2" type="stmt"/>
+      <line num="44" count="2" type="stmt"/>
+      <line num="46" count="2" type="stmt"/>
+      <line num="50" count="1" type="stmt"/>
+      <line num="54" count="0" type="stmt"/>
+      <line num="58" count="1" type="stmt"/>
+    </file>
+    <file name="OrderValidator.js" path="/Users/sonamzangmo/Downloads/Lab4/order-system-after/src/OrderValidator.js">
+      <metrics statements="13" coveredstatements="13" conditionals="16" coveredconditionals="16" methods="4" coveredmethods="4"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="8" count="8" type="cond" truecount="4" falsecount="0"/>
+      <line num="9" count="2" type="stmt"/>
+      <line num="14" count="6" type="cond" truecount="4" falsecount="0"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="17" count="5" type="stmt"/>
+      <line num="18" count="5" type="cond" truecount="4" falsecount="0"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="21" count="4" type="cond" truecount="4" falsecount="0"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="28" count="8" type="stmt"/>
+      <line num="29" count="6" type="stmt"/>
+      <line num="32" count="2" type="stmt"/>
+    </file>
+    <file name="PaymentFeeCalculator.js" path="/Users/sonamzangmo/Downloads/Lab4/order-system-after/src/PaymentFeeCalculator.js">
+      <metrics statements="16" coveredstatements="15" conditionals="10" coveredconditionals="9" methods="6" coveredmethods="6"/>
+      <line num="7" count="2" type="stmt"/>
+      <line num="10" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="13" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="20" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="21" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="22" count="0" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="27" count="4" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="29" count="3" type="stmt"/>
+      <line num="33" count="9" type="stmt"/>
+      <line num="34" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="37" count="2" type="stmt"/>
+    </file>
+    <file name="PricingCalculator.js" path="/Users/sonamzangmo/Downloads/Lab4/order-system-after/src/PricingCalculator.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="6" count="2" type="stmt"/>
+      <line num="9" count="1" type="stmt"/>
+    </file>
+    <file name="ShippingCalculator.js" path="/Users/sonamzangmo/Downloads/Lab4/order-system-after/src/ShippingCalculator.js">
+      <metrics statements="8" coveredstatements="8" conditionals="10" coveredconditionals="9" methods="1" coveredmethods="1"/>
+      <line num="6" count="2" type="stmt"/>
+      <line num="9" count="7" type="stmt"/>
+      <line num="11" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="13" count="4" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="19" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="24" count="2" type="stmt"/>
+    </file>
+    <file name="constants.js" path="/Users/sonamzangmo/Downloads/Lab4/order-system-after/src/constants.js">
+      <metrics statements="23" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="5" count="4" type="stmt"/>
+      <line num="7" count="4" type="stmt"/>
+      <line num="8" count="4" type="stmt"/>
+      <line num="9" count="4" type="stmt"/>
+      <line num="11" count="4" type="stmt"/>
+      <line num="12" count="4" type="stmt"/>
+      <line num="13" count="4" type="stmt"/>
+      <line num="14" count="4" type="stmt"/>
+      <line num="15" count="4" type="stmt"/>
+      <line num="17" count="4" type="stmt"/>
+      <line num="18" count="4" type="stmt"/>
+      <line num="19" count="4" type="stmt"/>
+      <line num="21" count="4" type="stmt"/>
+      <line num="23" count="4" type="stmt"/>
+      <line num="24" count="4" type="stmt"/>
+      <line num="25" count="4" type="stmt"/>
+      <line num="27" count="4" type="stmt"/>
+      <line num="32" count="4" type="stmt"/>
+      <line num="42" count="4" type="stmt"/>
+      <line num="43" count="4" type="stmt"/>
+      <line num="44" count="4" type="stmt"/>
+      <line num="45" count="4" type="stmt"/>
+      <line num="47" count="4" type="stmt"/>
+    </file>
+    <file name="errors.js" path="/Users/sonamzangmo/Downloads/Lab4/order-system-after/src/errors.js">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <line num="7" count="5" type="stmt"/>
+      <line num="8" count="5" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="15" count="1" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+    </file>
+  </project>
+</coverage>
