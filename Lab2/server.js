@@ -12,6 +12,7 @@ const authRoutes = require('./src/routes/auth');
 const registrationRoutes = require('./src/routes/registration');
 const paymentRoutes = require('./src/routes/payment');
 const resultsRoutes = require('./src/routes/results');
+const studentsRoutes = require('./src/routes/students'); // Lab 5: PostgreSQL-backed Student Records
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -27,6 +28,7 @@ app.use('/api', authRoutes);
 app.use('/api', registrationRoutes);
 app.use('/api', paymentRoutes);
 app.use('/api', resultsRoutes);
+app.use('/api', studentsRoutes); // Lab 5: /api/students CRUD
 
 // Fallback: send the SPA shell for any unmatched non-API route
 app.get('*', (req, res) => {
