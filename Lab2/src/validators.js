@@ -28,6 +28,10 @@ const UPPERCASE_REGEX = /[A-Z]/;
 const LOWERCASE_REGEX = /[a-z]/;
 const NUMBER_REGEX = /[0-9]/;
 const ALLOWED_SCREENSHOT_EXTENSIONS = ['jpg', 'jpeg', 'png']; // (R6)
+// Staff sign-in uses a college email instead of a Student ID: one name
+// token, then the fixed "@rub.edu.bt" domain (e.g. dorji.cst@rub.edu.bt).
+const STAFF_EMAIL_REGEX = /^[a-z][a-z0-9]*\.cst@rub\.edu\.bt$/i;
+const ALLOWED_DRUG_TEST_EXTENSIONS = ['pdf', 'jpg', 'jpeg', 'png']; // clinic reports are usually scanned as a PDF
 
 /**
  * Validates a Student ID against R1 (mandatory) and R2 (exactly 8 digits,
@@ -112,6 +116,31 @@ function validatePaymentScreenshot(fileName) {
 }
 
 /**
+ * Validates a drug test report file name - mandatory, PDF/JPG/JPEG/PNG
+ * only (clinics typically issue a scanned PDF, but a photo is accepted
+ * too, mirroring the payment screenshot rule).
+ * @param {string} fileName - e.g. "drug-test-report.pdf"
+ * @returns {{valid: boolean, message: string}}
+ */
+function validateDrugTestReport(fileName) {
+  if (!fileName || String(fileName).trim() === '') {
+    return { valid: false, message: 'Drug test report is mandatory.' };
+  }
+
+  const parts = String(fileName).split('.');
+  const extension = parts.length > 1 ? parts.pop().toLowerCase() : '';
+
+  if (!ALLOWED_DRUG_TEST_EXTENSIONS.includes(extension)) {
+    return {
+      valid: false,
+      message: 'Invalid file type. Only PDF, JPG, JPEG, or PNG files are accepted.',
+    };
+  }
+
+  return { valid: true, message: 'Drug test report is valid.' };
+}
+
+/**
  * Validates a transaction number against R7 (mandatory, format
  * DDD-DDDDDDDDD, 13 characters total).
  * @param {string} transactionNumber
@@ -136,12 +165,51 @@ function validateTransactionNumber(transactionNumber) {
   return { valid: true, message: 'Transaction number is valid.' };
 }
 
+/**
+ * Validates a staff email against the college's staff address format:
+ * one name token followed by the fixed "@rub.edu.bt" domain, e.g.
+ * dorji.cst@rub.edu.bt.
+ * @param {string} email
+ * @returns {{valid: boolean, message: string}}
+ */
+function validateStaffEmail(email) {
+  if (email === undefined || email === null || String(email).trim() === '') {
+    return { valid: false, message: 'Staff email is mandatory.' };
+  }
+  if (!STAFF_EMAIL_REGEX.test(String(email).trim())) {
+    return {
+      valid: false,
+      message: 'Staff email must follow the format name.cst@rub.edu.bt.',
+    };
+  }
+  return { valid: true, message: 'Staff email is valid.' };
+}
+
+/**
+ * Validates that a required free-text field (name, programme, ...) is
+ * present and not just whitespace.
+ * @param {string} value
+ * @param {string} fieldLabel - used in the returned message, e.g. "Name"
+ * @returns {{valid: boolean, message: string}}
+ */
+function validateRequiredText(value, fieldLabel) {
+  if (value === undefined || value === null || String(value).trim() === '') {
+    return { valid: false, message: `${fieldLabel} is mandatory.` };
+  }
+  return { valid: true, message: `${fieldLabel} is valid.` };
+}
+
 module.exports = {
   validateStudentId,
   validatePassword,
   validatePaymentScreenshot,
   validateTransactionNumber,
+  validateDrugTestReport,
+  validateStaffEmail,
+  validateRequiredText,
   STUDENT_ID_REGEX,
   TRANSACTION_NUMBER_REGEX,
+  STAFF_EMAIL_REGEX,
   ALLOWED_SCREENSHOT_EXTENSIONS,
+  ALLOWED_DRUG_TEST_EXTENSIONS,
 };

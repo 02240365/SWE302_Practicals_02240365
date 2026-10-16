@@ -7,7 +7,7 @@
  * -----------------------------------------------------------------------
  */
 const express = require('express');
-const { findStudent } = require('../db');
+const { findStudent, getModuleCatalogue } = require('../db');
 
 const router = express.Router();
 
@@ -27,7 +27,19 @@ router.get('/results/:studentId', (req, res) => {
     });
   }
 
-  return res.status(200).json({ success: true, results: student.results });
+  // Every registered module appears on the results sheet. Modules without a
+  // published grade yet are listed as "Pending" so a newly registered student
+  // sees their enrolment instead of an empty table.
+  const catalogue = getModuleCatalogue();
+  const results = [...(student.results || [])];
+  student.registeredModules.forEach((code) => {
+    if (!results.some((r) => r.moduleCode === code)) {
+      const mod = catalogue.find((m) => m.code === code);
+      results.push({ moduleCode: code, moduleTitle: mod ? mod.title : code, grade: 'Pending' });
+    }
+  });
+
+  return res.status(200).json({ success: true, results });
 });
 
 module.exports = router;

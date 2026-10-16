@@ -3,12 +3,18 @@
  * -----------------------------------------------------------------------
  * POST /api/payment/upload
  * Implements R5 (Mobile Banking only - informational/fixed method),
- * R6 (screenshot mandatory + file type), R7 (transaction number format),
- * R8 (receipt generated when verified) and R9 (registration stays
- * incomplete when verification fails / upload is incomplete).
+ * R6 (screenshot mandatory + file type), R7 (transaction number format).
  *
- * Uses multer with memory storage so no files are ever written to disk
- * (keeps the demo self-contained and safe to run anywhere).
+ * R8/R9 (receipt generated once verified / registration stays incomplete
+ * otherwise) are now driven by a real Registration Staff review instead
+ * of the student self-certifying: a valid submission is recorded as
+ * "pending" here, and routes/staff.js exposes the approve/reject
+ * decision that actually sets tuitionPaid and generates the receipt.
+ *
+ * Uses multer with memory storage, and keeps the uploaded file as a
+ * small base64 data URL on the in-memory student record so the staff
+ * dashboard can preview it - no files are ever written to disk (keeps
+ * the demo self-contained and safe to run anywhere).
  * -----------------------------------------------------------------------
  */
 const express = require('express');
@@ -16,11 +22,11 @@ const multer = require('multer');
 const { validatePaymentScreenshot, validateTransactionNumber } = require('../validators');
 const { findStudent } = require('../db');
 
-const upload = multer({ storage: multer.memoryStorage() });
+const upload = multer({ storage: multer.memoryStorage(), limits: { fileSize: 5 * 1024 * 1024 } });
 const router = express.Router();
 
 router.post('/payment/upload', upload.single('screenshot'), (req, res) => {
-  const { studentId, transactionNumber, verifiedByCollege } = req.body;
+  const { studentId, transactionNumber } = req.body;
 
   const student = findStudent(studentId);
   if (!student) {
@@ -40,25 +46,24 @@ router.post('/payment/upload', upload.single('screenshot'), (req, res) => {
     return res.status(400).json({ success: false, message: txnCheck.message });
   }
 
-  // R8 / R9: college verification outcome (simulated via a form field,
-  // representing the back-office verification step in a real system)
-  const isVerified = verifiedByCollege === 'true' || verifiedByCollege === true;
+  const mimeType = req.file.mimetype || 'image/jpeg';
+  const fileDataUrl = `data:${mimeType};base64,${req.file.buffer.toString('base64')}`;
 
-  if (!isVerified) {
-    student.tuitionPaid = false;
-    student.paymentReceipt = null;
-    return res.status(202).json({
-      success: false,
-      message: 'Payment could not be verified. Registration remains incomplete.',
-    });
-  }
+  student.paymentStatus = 'pending';
+  student.tuitionPaid = false;
+  student.paymentReceipt = null;
+  student.paymentReviewNote = null;
+  student.paymentSubmission = {
+    transactionNumber,
+    fileName,
+    fileDataUrl,
+    submittedAt: new Date().toISOString(),
+  };
 
-  student.tuitionPaid = true;
-  student.paymentReceipt = `RECEIPT-${transactionNumber}-${Date.now()}`;
-  return res.status(200).json({
+  return res.status(201).json({
     success: true,
-    message: 'Payment verified. Electronic receipt generated.',
-    receipt: student.paymentReceipt,
+    status: 'pending',
+    message: 'Payment submitted. Registration staff will verify it shortly.',
   });
 });
 

@@ -8,7 +8,7 @@
  */
 const express = require('express');
 const { validateStudentId, validatePassword } = require('../validators');
-const { findStudent } = require('../db');
+const { findStudent, getPublicProfile } = require('../db');
 
 const router = express.Router();
 
@@ -35,7 +35,9 @@ router.post('/login', (req, res) => {
   return res.status(200).json({
     success: true,
     message: 'Login successful.',
-    student: { studentId: student.studentId, name: student.name },
+    // Full (password-free) profile so the dashboard can render immediately
+    // without a second round trip.
+    student: getPublicProfile(studentId),
   });
 });
 
