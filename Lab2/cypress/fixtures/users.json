@@ -1,0 +1,12 @@
+{
+  "student": { "studentId": "02240365", "password": "Passw0rd", "name": "Demo Student" },
+  "staff": { "email": "registrar.cst@rub.edu.bt", "password": "Passw0rd" },
+  "newStudentPassword": "Passw0rd1",
+  "programme": "BE Software Engineering",
+  "invalid": {
+    "shortId": "0223012",
+    "letterId": "0224036A",
+    "wrongPassword": "Wrong1234",
+    "unknownId": "09990000"
+  }
+}

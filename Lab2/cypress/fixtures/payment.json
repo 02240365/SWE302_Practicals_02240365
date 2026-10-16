@@ -1,0 +1,9 @@
+{
+  "validTransaction": "123-123456789",
+  "badTransactions": ["12-123456789", "123456789012", "abc-123456789"],
+  "messages": {
+    "badFile": "Only JPG, JPEG, or PNG files are accepted.",
+    "badTransaction": "Transaction number must follow the format 123-123456789",
+    "noFile": "Payment screenshot is mandatory."
+  }
+}
